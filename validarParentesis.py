@@ -8,6 +8,6 @@ def es_valido(string):
         elif char in diccionario.values():
             if not stack:
                 return False
-            elif diccionario[stack.pop()] != char:  # diccionario["("] = ")"
+            elif diccionario[stack.pop()] != char:  # diccionario["("] = ")"?
                 return False
     return True

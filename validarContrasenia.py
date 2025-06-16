@@ -7,11 +7,14 @@
 
 def validar_contrasenia(contrasenia):
     if len(contrasenia)<8:
-        return "Contrasenia invalida: Al menos 8 caracteres"
+        print("Contrasenia invalida: Al menos 8 caracteres")
+        return False
     elif contrasenia.upper() == contrasenia:
-        return "Contrasenia invalida: Al menos una minuscula"
+        print("Contrasenia invalida: Al menos una minuscula")
+        return False
     elif contrasenia.lower() == contrasenia:
-        return "Contrasenia invalida: Al menos una mayuscula"
+        print("Contrasenia invalida: Al menos una mayuscula")
+        return False
     
     contNumero=0
     number = ["1","2","3","4","5","6","7","8","9"]
@@ -20,7 +23,8 @@ def validar_contrasenia(contrasenia):
             contNumero+=1
     
     if contNumero == 0:
-        return "Contrasenia invalida: La contrasenia no contiene numeros"
+        print("Contrasenia invalida: La contrasenia no contiene numeros")
+        return False
     
     contCaracteresEspeciales=0
     caracterEspecial = ["@","#","!","&"]
@@ -29,9 +33,12 @@ def validar_contrasenia(contrasenia):
             contCaracteresEspeciales+=1
 
     if contCaracteresEspeciales == 0:
-        return "Contrasenia invalida: La contrasenia no contiene caracteres especiales"
+        print("Contrasenia invalida: La contrasenia no contiene caracteres especiales. ej (@,#,!,&)")
+        return False
 
-    return "Contrasenia Valida"
+    print("Contrasenia valida")
+    return True
 
-contrasenia="ASDASDA123@SDAaaa"
-print(validar_contrasenia(contrasenia))
+contrasenia=""
+while not validar_contrasenia(contrasenia):
+    contrasenia = input("Ingrese su contrasenia: ")
