@@ -22,7 +22,7 @@ def es_anagrama(palabra1,palabra2):
     for char in palabra2:
         if char not in frecuencia2: # aparece por primera vez
             frecuencia2[char]=1
-        else:  # if char in frecuencia1: se repite
+        else:  # if char in frecuencia2: se repite
             frecuencia2[char]+=1
 
     return frecuencia1 == frecuencia2
